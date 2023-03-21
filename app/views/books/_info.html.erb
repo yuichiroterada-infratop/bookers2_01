@@ -1,5 +1,5 @@
 <!--部分テンプレート　User info-->
-<div class="col-md-3">
+<div>
   <h2>User info</h2>
 
   <!--ここに画像を追加-->
@@ -17,20 +17,6 @@
   </table>
 
   <!--ユーザー編集画面へ遷移-->
-  <div class="row">
-    <%= link_to "プロフィール編集", edit_user_path %>
-  </div>
-
-  <!--新規投稿画面-->
-  <h2>New book</h2>
-  <%= form_with model: book do |f| %>
-    <h5>Title</h5>
-    <%= f.text_field :title %>
-    <h5>Body</h5>
-    <%= f.text_area :body %>
-    <div><%= f.submit "Create Book" %></div>
-  <% end %>
-
-
+  <%= link_to "プロフィール編集", edit_user_path %>
 
 </div>

@@ -1,0 +1,9 @@
+<!--新規投稿画面-->
+  <h2>New book</h2>
+  <%= form_with model: book do |f| %>
+    <h5>Title</h5>
+    <%= f.text_field :title %>
+    <h5>Body</h5>
+    <%= f.text_area :body %>
+    <div><%= f.submit "Create Book" %></div>
+  <% end %>
