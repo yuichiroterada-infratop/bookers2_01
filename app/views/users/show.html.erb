@@ -1,1 +1,24 @@
-<h1>マイページ</h1>
+<div class="container">
+  <h1>マイページ</h1>
+  <div class="row">
+    <%= render "books/info", user: @user, book: @book %>
+    <div class="col-md-9">
+      <table>
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Opinion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @books.each do |book| %>
+          <tr>
+            <td><%= book.title %></td>
+            <td><%= book.body %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
