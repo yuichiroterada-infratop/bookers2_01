@@ -1,2 +1,10 @@
 <!--/books/:idの画面-->
 <h1>this is show view</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <%= render "users/info", user: @user, book: @book %>
+      <%= render "newbook", user: @user, book: @book %>
+    </div>
+  </div>
+</div>
