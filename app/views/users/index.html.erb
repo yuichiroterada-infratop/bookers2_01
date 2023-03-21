@@ -1,0 +1,32 @@
+<!--/usersの画面-->
+<h1>This page is users/index page</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <%= render "info", user: @user, book: @book %>
+      <%= render "books/newbook", user: @user, book: @book %>
+    </div>
+
+    <div class="col-md-9">
+      <h2>Users</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>image</th>
+            <th>name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @users.each do |user| %>
+          <tr>
+            <td>ユーザー写真</td>
+            <td><%= user.name %></td>
+            <td><%= link_to "Show", user_path(user.id) %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
