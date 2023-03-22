@@ -3,7 +3,7 @@
 
 <div class="container">
   <h1>User info</h1>
-  <%= form_with model: @user do |f| %>
+  <%= form_with model: @user, local:true do |f| %>
   <h4>name</h1>
   <%= f.text_field :name %>
 
