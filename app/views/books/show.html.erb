@@ -5,7 +5,7 @@
   <div class="row">
     <div class="col-md-3">
       <%= render "users/info", user: @user, book: @book %>
-      <%= render "newbook", user: @user, book: Book.new %>
+      <%= render "newbook", book: Book.new %>
     </div>
 
     <div class="col-md-9">
@@ -15,8 +15,10 @@
           <td>ユーザー写真</td>
           <td><%= link_to @book.title, @book_path %></td>
           <td><%= @book.body %></td>
-          <td><%= link_to "Edit", edit_book_path %></td>
-          <td><%= link_to "Destroy", book_path, method: :delete, "data-confirm" => "本当に消しますか？" %></td>
+          <% if @book.user == current_user %>
+            <td><%= link_to "Edit", edit_book_path %></td>
+            <td><%= link_to "Destroy", book_path, method: :delete, "data-confirm" => "本当に消しますか？" %></td>
+          <% end %>
         </tbody>
       </table>
     </div>

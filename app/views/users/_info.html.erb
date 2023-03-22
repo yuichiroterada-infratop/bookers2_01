@@ -3,21 +3,23 @@
   <h2>User info</h2>
 
   <!--ここに画像を追加-->
-  <p><%= image_tag @user.get_profile_image("100x100") %></p>
+  <p><%= image_tag user.get_profile_image("100x100") %></p>
 
   <table class="table">
     <tr></tr>
     <tr>
       <th>name</th>
-      <th><%= @user.name %></th>
+      <th><%= user.name %></th>
     </tr>
     <tr>
       <th>introduction</th>
-      <th><%= @user.introduction %></th>
+      <th><%= user.introduction %></th>
     </tr>
   </table>
 
   <!--ユーザー編集画面へ遷移-->
+  <% if user == current_user %>
   <%= link_to "プロフィール編集", edit_user_path(user) %>
+  <% end %>
 
 </div>

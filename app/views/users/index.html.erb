@@ -4,8 +4,8 @@
 <div class="container">
   <div class="row">
     <div class="col-md-3">
-      <%= render "info", user: @user, book: @book %>
-      <%= render "books/newbook", user: @user, book: @book %>
+      <%= render "info", user: current_user, book: @book %>
+      <%= render "books/newbook", book: @book %>
     </div>
 
     <div class="col-md-9">
