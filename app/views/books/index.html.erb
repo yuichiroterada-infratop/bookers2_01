@@ -2,6 +2,7 @@
 <h1>this is books/index view</h1>
 
 <div class="container">
+  <div class="row"><%= render "layouts/errors", obj: @book %></div>
   <div class="row">
     <div class="col-md-3">
       <%= render "users/info", user: @user, book: @book %>
