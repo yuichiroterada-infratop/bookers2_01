@@ -38,7 +38,7 @@ class BooksController < ApplicationController
       redirect_to book_path(@book.id)
     else
       @user = current_user
-      render :show
+      render :edit
     end
   end
 
