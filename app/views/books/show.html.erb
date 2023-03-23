@@ -8,11 +8,11 @@
       <%= render "newbook", book: Book.new %>
     </div>
 
-    <div class="col-md-9">
+    <div class="col-md-8 offset-md-1">
       <h4>Book detail</h4>
       <table>
         <tbody>
-          <td>ユーザー写真</td>
+          <td><%= image_tag @book.user.get_profile_image("50x50") %></td>
           <td><%= link_to @book.title, @book_path %></td>
           <td><%= @book.body %></td>
           <% if @book.user == current_user %>

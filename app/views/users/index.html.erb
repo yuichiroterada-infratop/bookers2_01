@@ -8,7 +8,7 @@
       <%= render "books/newbook", book: @book %>
     </div>
 
-    <div class="col-md-9">
+    <div class="col-md-8 offset-md-1">
       <h2>Users</h2>
       <table>
         <thead>
@@ -20,7 +20,7 @@
         <tbody>
           <% @users.each do |user| %>
           <tr>
-            <td>ユーザー写真</td>
+            <td><%= image_tag user.get_profile_image("50x50") %></td>
             <td><%= user.name %></td>
             <td><%= link_to "Show", user_path(user.id) %></td>
           </tr>
