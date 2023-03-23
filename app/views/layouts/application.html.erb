@@ -8,6 +8,7 @@
 
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://kit.fontawesome.com/6434279763.js" crossorigin="anonymous"></script>
   </head>
 
   <body class="d-flex flex-column vh-100">
@@ -21,15 +22,47 @@
           <div class="navbar-collapse collapse" id="navbarNavDropdown" style>
           <ul class="navbar-nav ml-auto">
             <% if user_signed_in? %>
-            <li class="nav-item"><%= link_to "Home", user_path(current_user.id) %></li>
-            <li class="nav-item"><%= link_to "Users", users_path %></li>
-            <li class="nav-item"><%= link_to "Books", books_path %></li>
-            <li class="nav-item"><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+            <li>
+              <%= link_to user_path(current_user),class: 'nav-link text-light' do %>
+              <i class="fas fa-home"></i> Home
+              <% end %>
+            </li>
+            <li>
+              <%=  link_to users_path,class: 'nav-link text-light' do %>
+              <i class="fas fa-users"></i> Users
+              <% end %>
+            </li>
+            <li>
+              <%=  link_to books_path ,class: 'nav-link text-light' do %>
+              <i class="fas fa-book-open"></i> Books
+              <% end %>
+            </li>
+            <li>
+              <%= link_to destroy_user_session_path, method: :delete,class: 'nav-link text-light' do %>
+              <i class="fas fa-sign-out-alt"></i> Log out
+              <% end %>
+            </li>
             <% else %>
-            <li class="nav-item"><%= link_to "Home", root_path %></li>
-            <li class="nav-item"><%= link_to "About", home_about_path %></li>
-            <li class="nav-item"><%= link_to "Sign up", new_user_registration_path %></li>
-            <li class="nav-item"><%= link_to "Log in", new_user_session_path %></li>
+            <li>
+              <%= link_to root_path,class: 'nav-link text-light' do %>
+              <i class="fas fa-home"></i> Home
+              <% end %>
+            </li>
+            <li>
+              <%= link_to home_about_path,class: 'nav-link text-light' do %>
+              <i class="fas fa-link"></i> About
+              <% end %>
+            </li>
+            <li>
+              <%= link_to new_user_registration_path,class: 'nav-link text-light' do %>
+              <i class="fas fa-user-plus"></i> Sign up
+              <% end %>
+            </li>
+            <li>
+              <%= link_to new_user_session_path ,class: 'nav-link text-light' do %>
+              <i class="fas fa-sign-in-alt"></i> Log in
+              <% end %>
+            </li>
             <% end %>
           </ul>
           </div>
@@ -39,7 +72,6 @@
 
     <main>
       <p id="notice"><%= flash[:notice] %></p>
-
       <%= yield %>
     </main>
 
