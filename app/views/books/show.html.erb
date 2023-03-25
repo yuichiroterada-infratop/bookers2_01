@@ -1,5 +1,4 @@
 <!--/books/:idの画面-->
-<h1>this is books/show view</h1>
 <div class="row"><%= render "layouts/errors", obj: @book %></div>
 <div class="container">
   <div class="row">
@@ -12,7 +11,12 @@
       <h4>Book detail</h4>
       <table>
         <tbody>
-          <td><%= image_tag @book.user.get_profile_image("80x80") %></td>
+          <td>
+            <%= link_to user_path(@book.user.id) do %>
+              <%= image_tag @book.user.get_profile_image("80x80") %>
+              <%= @book.user.name %>
+            <% end %>
+          </td>
           <td><%= link_to @book.title, @book_path %></td>
           <td><%= @book.body %></td>
           <% if @book.user == current_user %>

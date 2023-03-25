@@ -28,6 +28,7 @@ class BooksController < ApplicationController
   end
 
   def edit
+    ensure_user
     @book = Book.find(params[:id])
   end
 
