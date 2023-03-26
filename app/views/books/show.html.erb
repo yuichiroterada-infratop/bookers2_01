@@ -27,7 +27,6 @@
           <td>コメント数：<%= @book.post_comments.count %></td>
         </tbody>
       </table>
-      <div>以下、コメントエリア</div>
       <table>
       <% @post_comments.each do |comment| %>
         <tbody>
@@ -39,6 +38,11 @@
           </td>
           <td>
             <%= comment.comment %>
+          </td>
+          <td>
+          <% if current_user == comment.user %>
+            <%= link_to "Destroy", book_post_comment_path(comment.book, comment), method: :delete %>
+          <% end %>
           </td>
         </tbody>
       <% end %>
