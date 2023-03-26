@@ -1,4 +1,14 @@
 
+BookCommentモデルのテスト
+  バリデーションのテスト
+    commentカラム
+[31m      空欄でないこと (FAILED - 1)[0m
+  アソシエーションのテスト
+    Bookモデルとの関係
+[31m      N:1となっている (FAILED - 2)[0m
+    Userモデルとの関係
+[31m      N:1となっている (FAILED - 3)[0m
+
 Bookモデルのテスト
   バリデーションのテスト
     titleカラム
@@ -10,6 +20,15 @@ Bookモデルのテスト
   アソシエーションのテスト
     Userモデルとの関係
 [32m      N:1となっている[0m
+
+Favoriteモデルのテスト
+  バリデーションのテスト
+[31m    ユーザーは一つの投稿に一つしかいいねできない (FAILED - 4)[0m
+  アソシエーションのテスト
+    Bookモデルとの関係
+[31m      N:1となっている (FAILED - 5)[0m
+    Userモデルとの関係
+[31m      N:1となっている (FAILED - 6)[0m
 
 Userモデルのテスト
   バリデーションのテスト
@@ -31,22 +50,21 @@ Userモデルのテスト
   トップ画面のテスト
     表示内容の確認
 [32m      URLが正しい[0m
-[32m      Log inリンクが表示される: 青色のボタンの表示が「Log in」である[0m
+[32m      Log inリンクが表示される: 左上から5番目のリンクが「Log in」である[0m
 [32m      Log inリンクの内容が正しい[0m
-[32m      Sign upリンクが表示される: 緑色のボタンの表示が「Sign up」である[0m
+[32m      Sign upリンクが表示される: 左上から6番目のリンクが「Sign up」である[0m
 [32m      Sign upリンクの内容が正しい[0m
   アバウト画面のテスト
     表示内容の確認
 [32m      URLが正しい[0m
   ヘッダーのテスト: ログインしていない場合
     表示内容の確認
-[32m      Bookersリンクが表示される: 左上から1番目のリンクが「Bookers」である[0m
-[32m      Homeリンクが表示される: 左上から2番目のリンクが「Home」である[0m
-[32m      Aboutリンクが表示される: 左上から3番目のリンクが「About」である[0m
-[32m      Sign upリンクが表示される: 左上から4番目のリンクが「Sign up」である[0m
-[32m      Log inリンクが表示される: 左上から5番目のリンクが「Log in」である[0m
+[32m      タイトルが表示される[0m
+[32m      Homeリンクが表示される: 左上から1番目のリンクが「Home」である[0m
+[32m      Aboutリンクが表示される: 左上から2番目のリンクが「About」である[0m
+[32m      Sign upリンクが表示される: 左上から3番目のリンクが「Sign up」である[0m
+[32m      Log inリンクが表示される: 左上から4番目のリンクが「Log in」である[0m
     リンクの内容を確認
-[32m      Bookersを押すと、トップ画面に遷移する[0m
 [32m      Homeを押すと、トップ画面に遷移する[0m
 [32m      Aboutを押すと、アバウト画面に遷移する[0m
 [32m      Sign upを押すと、新規登録画面に遷移する[0m
@@ -77,11 +95,11 @@ Userモデルのテスト
 [32m      ログインに失敗し、ログイン画面にリダイレクトされる[0m
   ヘッダーのテスト: ログインしている場合
     ヘッダーの表示を確認
-[32m      Bookersリンクが表示される: 左上から1番目のリンクが「Bookers」である[0m
-[32m      Homeリンクが表示される: 左上から2番目のリンクが「Home」である[0m
-[32m      Usersリンクが表示される: 左上から3番目のリンクが「Users」である[0m
-[32m      Booksリンクが表示される: 左上から4番目のリンクが「Books」である[0m
-[32m      Log outリンクが表示される: 左上から5番目のリンクが「Log out」である[0m
+[32m      タイトルが表示される[0m
+[32m      Homeリンクが表示される: 左上から1番目のリンクが「Home」である[0m
+[32m      Usersリンクが表示される: 左上から2番目のリンクが「Users」である[0m
+[32m      Booksリンクが表示される: 左上から3番目のリンクが「Books」である[0m
+[32m      Log outリンクが表示される: 左上から4番目のリンクが「Log out」である[0m
   ユーザログアウトのテスト
     ログアウト機能のテスト
 [32m      正しくログアウトできている: ログアウト後のリダイレクト先においてAbout画面へのリンクが存在する[0m
@@ -96,7 +114,7 @@ Userモデルのテスト
   投稿一覧画面のテスト
     表示内容の確認
 [32m      URLが正しい[0m
-[31m      自分と他人の画像のリンク先が正しい (FAILED - 1)[0m
+[32m      自分と他人の画像のリンク先が正しい[0m
 [32m      自分の投稿と他人の投稿のタイトルのリンク先がそれぞれ正しい[0m
 [32m      自分の投稿と他人の投稿のオピニオンが表示される[0m
     サイドバーの確認
@@ -105,8 +123,8 @@ Userモデルのテスト
 [32m      「New book」と表示される[0m
 [32m      titleフォームが表示される[0m
 [32m      titleフォームに値が入っていない[0m
-[32m      bodyフォームが表示される[0m
-[32m      bodyフォームに値が入っていない[0m
+[32m      opinionフォームが表示される[0m
+[32m      opinionフォームに値が入っていない[0m
 [32m      Create Bookボタンが表示される[0m
     投稿成功のテスト
 [32m      自分の新しい投稿が正しく保存される[0m
@@ -115,9 +133,9 @@ Userモデルのテスト
     表示内容の確認
 [32m      URLが正しい[0m
 [32m      「Book detail」と表示される[0m
-[31m      ユーザ画像・名前のリンク先が正しい (FAILED - 2)[0m
+[32m      ユーザ画像・名前のリンク先が正しい[0m
 [32m      投稿のtitleが表示される[0m
-[32m      投稿のbodyが表示される[0m
+[32m      投稿のopinionが表示される[0m
 [32m      投稿の編集リンクが表示される[0m
 [32m      投稿の削除リンクが表示される[0m
     サイドバーの確認
@@ -126,15 +144,14 @@ Userモデルのテスト
 [32m      「New book」と表示される[0m
 [32m      titleフォームが表示される[0m
 [32m      titleフォームに値が入っていない[0m
-[32m      bodyフォームが表示される[0m
-[32m      bodyフォームに値が入っていない[0m
+[32m      opinionフォームが表示される[0m
+[32m      opinionフォームに値が入っていない[0m
 [32m      Create Bookボタンが表示される[0m
     投稿成功のテスト
 [32m      自分の新しい投稿が正しく保存される[0m
     編集リンクのテスト
 [32m      編集画面に遷移する[0m
     削除リンクのテスト
-[32m      application.html.erbにjavascript_pack_tagを含んでいる[0m
 [32m      正しく削除される[0m
 [32m      リダイレクト先が、投稿一覧画面になっている[0m
   自分の投稿編集画面のテスト
@@ -142,7 +159,7 @@ Userモデルのテスト
 [32m      URLが正しい[0m
 [32m      「Editing Book」と表示される[0m
 [32m      title編集フォームが表示される[0m
-[32m      body編集フォームが表示される[0m
+[32m      opinion編集フォームが表示される[0m
 [32m      Update Bookボタンが表示される[0m
 [32m      Showリンクが表示される[0m
 [32m      Backリンクが表示される[0m
@@ -162,15 +179,15 @@ Userモデルのテスト
 [32m      「New book」と表示される[0m
 [32m      titleフォームが表示される[0m
 [32m      titleフォームに値が入っていない[0m
-[32m      bodyフォームが表示される[0m
-[32m      bodyフォームに値が入っていない[0m
+[32m      opinionフォームが表示される[0m
+[32m      opinionフォームに値が入っていない[0m
 [32m      Create Bookボタンが表示される[0m
   自分のユーザ詳細画面のテスト
     表示の確認
 [32m      URLが正しい[0m
 [32m      投稿一覧のユーザ画像のリンク先が正しい[0m
 [32m      投稿一覧に自分の投稿のtitleが表示され、リンクが正しい[0m
-[32m      投稿一覧に自分の投稿のbodyが表示される[0m
+[32m      投稿一覧に自分の投稿のopinionが表示される[0m
 [32m      他人の投稿は表示されない[0m
     サイドバーの確認
 [32m      自分の名前と紹介文が表示される[0m
@@ -178,8 +195,8 @@ Userモデルのテスト
 [32m      「New book」と表示される[0m
 [32m      titleフォームが表示される[0m
 [32m      titleフォームに値が入っていない[0m
-[32m      bodyフォームが表示される[0m
-[32m      bodyフォームに値が入っていない[0m
+[32m      opinionフォームが表示される[0m
+[32m      opinionフォームに値が入っていない[0m
 [32m      Create Bookボタンが表示される[0m
   自分のユーザ情報編集画面のテスト
     表示の確認
@@ -231,7 +248,7 @@ Userモデルのテスト
       表示内容の確認
 [32m        URLが正しい[0m
 [32m        「Book detail」と表示される[0m
-[31m        ユーザ画像・名前のリンク先が正しい (FAILED - 3)[0m
+[32m        ユーザ画像・名前のリンク先が正しい[0m
 [32m        投稿のtitleが表示される[0m
 [32m        投稿のopinionが表示される[0m
 [32m        投稿の編集リンクが表示されない[0m
@@ -242,7 +259,7 @@ Userモデルのテスト
 [32m        自分の名前と紹介文は表示されない[0m
 [32m        自分のユーザ編集画面へのリンクは存在しない[0m
     他人の投稿編集画面
-[31m      遷移できず、投稿一覧画面にリダイレクトされる (FAILED - 4)[0m
+[32m      遷移できず、投稿一覧画面にリダイレクトされる[0m
     他人のユーザ詳細画面のテスト
       表示の確認
 [32m        URLが正しい[0m
@@ -283,39 +300,714 @@ Userモデルのテスト
 [32m      投稿一覧画面でレンチアイコンが表示される[0m
 [32m      投稿詳細画面でレンチアイコンが表示される[0m
 
+[STEP4] いいねとコメントのテスト
+  投稿一覧画面のテスト[課題4追加分]
+    表示の確認
+[31m      いいねボタンのハートアイコンが表示される (FAILED - 7)[0m
+[31m      いいねボタンが表示される (FAILED - 8)[0m
+[31m      コメント数が表示される (FAILED - 9)[0m
+    いいね作成機能のテスト
+[31m      自分のいいねが正しく保存される (FAILED - 10)[0m
+[31m      リダイレクト先が投稿一覧画面になっている (FAILED - 11)[0m
+[31m      リダイレクト先でいいね数が正しく更新されている (FAILED - 12)[0m
+    いいね削除機能のテスト
+[31m      自分のいいねが正しく削除される (FAILED - 13)[0m
+[31m      リダイレクト先が投稿一覧画面になっている (FAILED - 14)[0m
+[31m      リダイレクト先でいいね数が正しく更新されている (FAILED - 15)[0m
+  自分の投稿詳細画面のテスト[課題4追加分]
+    表示の確認
+[31m      いいねボタンのハートアイコンが表示される (FAILED - 16)[0m
+[31m      いいねボタンが表示される (FAILED - 17)[0m
+[31m      コメント数が表示される (FAILED - 18)[0m
+[31m      コメント一覧でコメント投稿者の画像が表示される: fallbackの画像がサイドバーの1つ＋Book detail直下の1つ＋コメント一覧(2人)の2つの計4つ存在する (FAILED - 19)[0m
+[31m      コメント一覧でコメント投稿者の名前が表示される (FAILED - 20)[0m
+[31m      コメント一覧でコメントの内容が表示される (FAILED - 21)[0m
+[31m      自分が投稿したコメントの削除ボタンが表示される (FAILED - 22)[0m
+[31m      他人が投稿したコメントの削除ボタンは表示されない (FAILED - 23)[0m
+[31m      コメント投稿フォームが表示される (FAILED - 24)[0m
+[31m      送信ボタンが表示される (FAILED - 25)[0m
+    いいね機能のテスト
+[31m      自分のいいねが正しく保存される (FAILED - 26)[0m
+[31m      リダイレクト先が、いいねをした投稿詳細画面になっている (FAILED - 27)[0m
+[31m      リダイレクト先でいいね数が正しく更新されている (FAILED - 28)[0m
+    コメント追加機能のテスト
+[31m      自分のコメントが正しく保存される (FAILED - 29)[0m
+[31m      リダイレクト先が、コメントをした投稿詳細画面になっている (FAILED - 30)[0m
+[31m      リダイレクト先でコメント数が正しく更新されている (FAILED - 31)[0m
+[31m      リダイレクト先で新しいコメントが表示されている (FAILED - 32)[0m
+    コメント削除機能のテスト
+[31m      自分のコメントが正しく削除される (FAILED - 33)[0m
+[31m      リダイレクト先が、コメントをしていた投稿詳細画面になっている (FAILED - 34)[0m
+[31m      リダイレクト先でコメント数が正しく更新されている (FAILED - 35)[0m
+[31m      リダイレクト先で削除したコメントは表示されない (FAILED - 36)[0m
+  自分のユーザ詳細画面のテスト[課題4追加分]
+    表示の確認
+[31m      いいねボタンのハートアイコンが表示される (FAILED - 37)[0m
+[31m      いいねボタンが表示される (FAILED - 38)[0m
+[31m      コメント数が表示される (FAILED - 39)[0m
+    いいね作成機能のテスト
+[31m      自分のいいねが正しく保存される (FAILED - 40)[0m
+[31m      リダイレクト先が自分のユーザ詳細画面になっている (FAILED - 41)[0m
+[31m      リダイレクト先でいいね数が正しく更新されている (FAILED - 42)[0m
+
 Failures:
 
-  1) [STEP2] ユーザログイン後のテスト 投稿一覧画面のテスト 表示内容の確認 自分と他人の画像のリンク先が正しい
-     [31mFailure/Error: expect(page).to have_link '', href: user_path(other_book.user)[0m
-     [31m  expected to find link "" with href "/users/1" but there were no matches[0m
-     [36m# ./spec/system/02_after_login_spec.rb:52:in `block (4 levels) in <main>'[0m
-
-  2) [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト 表示内容の確認 ユーザ画像・名前のリンク先が正しい
-     [31mFailure/Error: expect(page).to have_link book.user.name, href: user_path(book.user)[0m
-     [31m  expected to find link "9kk1wtc6d9" with href "/users/2" but there were no matches[0m
-     [36m# ./spec/system/02_after_login_spec.rb:121:in `block (4 levels) in <main>'[0m
-
-  3) [STEP3] 仕上げのテスト 他人の画面のテスト 他人の投稿詳細画面のテスト 表示内容の確認 ユーザ画像・名前のリンク先が正しい
-     [31mFailure/Error: expect(page).to have_link other_book.user.name, href: user_path(other_book.user)[0m
-     [31m  expected to find link "3mr7lp3e4g" with href "/users/1" but there were no matches[0m
-     [36m# ./spec/system/03_finishing_touches_spec.rb:226:in `block (5 levels) in <main>'[0m
-
-  4) [STEP3] 仕上げのテスト 他人の画面のテスト 他人の投稿編集画面 遷移できず、投稿一覧画面にリダイレクトされる
-     [31mFailure/Error: expect(current_path).to eq '/books'[0m
+  1) BookCommentモデルのテスト バリデーションのテスト commentカラム 空欄でないこと
+     [31mFailure/Error: let!(:book_comment) { build(:book_comment, book: book, user: user) }[0m
      [31m[0m
-     [31m  expected: "/books"[0m
-     [31m       got: "/books/2/edit"[0m
+     [31mNameError:[0m
+     [31m  uninitialized constant BookComment[0m
      [31m[0m
-     [31m  (compared using ==)[0m
-     [36m# ./spec/system/03_finishing_touches_spec.rb:263:in `block (4 levels) in <main>'[0m
+     [31m          Object.const_get(camel_cased_word)[0m
+     [31m                ^^^^^^^^^^[0m
+     [31m  Did you mean?  BooksController[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:26:in `build_class'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:87:in `compile'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory_runner.rb:14:in `run'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/strategy_syntax_method_registrar.rb:28:in `block in define_singular_strategy_method'[0m
+     [36m# ./spec/models/book_comment_spec.rb:9:in `block (3 levels) in <top (required)>'[0m
 
-Finished in 52.04 seconds (files took 2.02 seconds to load)
-[31m199 examples, 4 failures[0m
+  2) BookCommentモデルのテスト アソシエーションのテスト Bookモデルとの関係 N:1となっている
+     [31mFailure/Error: expect(BookComment.reflect_on_association(:book).macro).to eq :belongs_to[0m
+     [31m[0m
+     [31mNameError:[0m
+     [31m  uninitialized constant BookComment[0m
+     [31m[0m
+     [31m          expect(BookComment.reflect_on_association(:book).macro).to eq :belongs_to[0m
+     [31m                 ^^^^^^^^^^^[0m
+     [31m  Did you mean?  BooksController[0m
+     [36m# ./spec/models/book_comment_spec.rb:22:in `block (4 levels) in <top (required)>'[0m
+
+  3) BookCommentモデルのテスト アソシエーションのテスト Userモデルとの関係 N:1となっている
+     [31mFailure/Error: expect(BookComment.reflect_on_association(:user).macro).to eq :belongs_to[0m
+     [31m[0m
+     [31mNameError:[0m
+     [31m  uninitialized constant BookComment[0m
+     [31m[0m
+     [31m          expect(BookComment.reflect_on_association(:user).macro).to eq :belongs_to[0m
+     [31m                 ^^^^^^^^^^^[0m
+     [31m  Did you mean?  BooksController[0m
+     [36m# ./spec/models/book_comment_spec.rb:27:in `block (4 levels) in <top (required)>'[0m
+
+  4) Favoriteモデルのテスト バリデーションのテスト ユーザーは一つの投稿に一つしかいいねできない
+     [31mFailure/Error: let!(:favorite) { create(:favorite, book: book, user: user) }[0m
+     [31m[0m
+     [31mNameError:[0m
+     [31m  uninitialized constant Favorite[0m
+     [31m[0m
+     [31m          Object.const_get(camel_cased_word)[0m
+     [31m                ^^^^^^^^^^[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:26:in `build_class'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:87:in `compile'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory_runner.rb:14:in `run'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/strategy_syntax_method_registrar.rb:28:in `block in define_singular_strategy_method'[0m
+     [36m# ./spec/models/favorite_spec.rb:9:in `block (3 levels) in <main>'[0m
+
+  5) Favoriteモデルのテスト アソシエーションのテスト Bookモデルとの関係 N:1となっている
+     [31mFailure/Error: expect(Favorite.reflect_on_association(:book).macro).to eq :belongs_to[0m
+     [31m[0m
+     [31mNameError:[0m
+     [31m  uninitialized constant Favorite[0m
+     [31m[0m
+     [31m          expect(Favorite.reflect_on_association(:book).macro).to eq :belongs_to[0m
+     [31m                 ^^^^^^^^[0m
+     [36m# ./spec/models/favorite_spec.rb:20:in `block (4 levels) in <main>'[0m
+
+  6) Favoriteモデルのテスト アソシエーションのテスト Userモデルとの関係 N:1となっている
+     [31mFailure/Error: expect(Favorite.reflect_on_association(:user).macro).to eq :belongs_to[0m
+     [31m[0m
+     [31mNameError:[0m
+     [31m  uninitialized constant Favorite[0m
+     [31m[0m
+     [31m          expect(Favorite.reflect_on_association(:user).macro).to eq :belongs_to[0m
+     [31m                 ^^^^^^^^[0m
+     [36m# ./spec/models/favorite_spec.rb:25:in `block (4 levels) in <main>'[0m
+
+  7) [STEP4] いいねとコメントのテスト 投稿一覧画面のテスト[課題4追加分] 表示の確認 いいねボタンのハートアイコンが表示される
+     [31mFailure/Error: let!(:user_book_comment) { create(:book_comment, book: book, user: user) }[0m
+     [31m[0m
+     [31mNameError:[0m
+     [31m  uninitialized constant BookComment[0m
+     [31m[0m
+     [31m          Object.const_get(camel_cased_word)[0m
+     [31m                ^^^^^^^^^^[0m
+     [31m  Did you mean?  BooksController[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:26:in `build_class'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:87:in `compile'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory_runner.rb:14:in `run'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/strategy_syntax_method_registrar.rb:28:in `block in define_singular_strategy_method'[0m
+     [36m# ./spec/system/04_favorite_comment_spec.rb:8:in `block (2 levels) in <main>'[0m
+
+  8) [STEP4] いいねとコメントのテスト 投稿一覧画面のテスト[課題4追加分] 表示の確認 いいねボタンが表示される
+     [31mFailure/Error: let!(:user_book_comment) { create(:book_comment, book: book, user: user) }[0m
+     [31m[0m
+     [31mNameError:[0m
+     [31m  uninitialized constant BookComment[0m
+     [31m[0m
+     [31m          Object.const_get(camel_cased_word)[0m
+     [31m                ^^^^^^^^^^[0m
+     [31m  Did you mean?  BooksController[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:26:in `build_class'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:87:in `compile'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory_runner.rb:14:in `run'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/strategy_syntax_method_registrar.rb:28:in `block in define_singular_strategy_method'[0m
+     [36m# ./spec/system/04_favorite_comment_spec.rb:8:in `block (2 levels) in <main>'[0m
+
+  9) [STEP4] いいねとコメントのテスト 投稿一覧画面のテスト[課題4追加分] 表示の確認 コメント数が表示される
+     [31mFailure/Error: let!(:user_book_comment) { create(:book_comment, book: book, user: user) }[0m
+     [31m[0m
+     [31mNameError:[0m
+     [31m  uninitialized constant BookComment[0m
+     [31m[0m
+     [31m          Object.const_get(camel_cased_word)[0m
+     [31m                ^^^^^^^^^^[0m
+     [31m  Did you mean?  BooksController[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:26:in `build_class'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:87:in `compile'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory_runner.rb:14:in `run'[0m
+     [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/strategy_syntax_method_registrar.rb:28:in `block in define_singular_strategy_method'[0m
+     [36m# ./spec/system/04_favorite_comment_spec.rb:8:in `block (2 levels) in <main>'[0m
+
+  10) [STEP4] いいねとコメントのテスト 投稿一覧画面のテスト[課題4追加分] いいね作成機能のテスト 自分のいいねが正しく保存される
+      [31mFailure/Error: let!(:user_book_comment) { create(:book_comment, book: book, user: user) }[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  uninitialized constant BookComment[0m
+      [31m[0m
+      [31m          Object.const_get(camel_cased_word)[0m
+      [31m                ^^^^^^^^^^[0m
+      [31m  Did you mean?  BooksController[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:26:in `build_class'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:87:in `compile'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory_runner.rb:14:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/strategy_syntax_method_registrar.rb:28:in `block in define_singular_strategy_method'[0m
+      [36m# ./spec/system/04_favorite_comment_spec.rb:8:in `block (2 levels) in <main>'[0m
+
+  11) [STEP4] いいねとコメントのテスト 投稿一覧画面のテスト[課題4追加分] いいね作成機能のテスト リダイレクト先が投稿一覧画面になっている
+      [31mFailure/Error: let!(:user_book_comment) { create(:book_comment, book: book, user: user) }[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  uninitialized constant BookComment[0m
+      [31m[0m
+      [31m          Object.const_get(camel_cased_word)[0m
+      [31m                ^^^^^^^^^^[0m
+      [31m  Did you mean?  BooksController[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:26:in `build_class'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:87:in `compile'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory_runner.rb:14:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/strategy_syntax_method_registrar.rb:28:in `block in define_singular_strategy_method'[0m
+      [36m# ./spec/system/04_favorite_comment_spec.rb:8:in `block (2 levels) in <main>'[0m
+
+  12) [STEP4] いいねとコメントのテスト 投稿一覧画面のテスト[課題4追加分] いいね作成機能のテスト リダイレクト先でいいね数が正しく更新されている
+      [31mFailure/Error: let!(:user_book_comment) { create(:book_comment, book: book, user: user) }[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  uninitialized constant BookComment[0m
+      [31m[0m
+      [31m          Object.const_get(camel_cased_word)[0m
+      [31m                ^^^^^^^^^^[0m
+      [31m  Did you mean?  BooksController[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:26:in `build_class'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:87:in `compile'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory_runner.rb:14:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/strategy_syntax_method_registrar.rb:28:in `block in define_singular_strategy_method'[0m
+      [36m# ./spec/system/04_favorite_comment_spec.rb:8:in `block (2 levels) in <main>'[0m
+
+  13) [STEP4] いいねとコメントのテスト 投稿一覧画面のテスト[課題4追加分] いいね削除機能のテスト 自分のいいねが正しく削除される
+      [31mFailure/Error: let!(:user_book_comment) { create(:book_comment, book: book, user: user) }[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  uninitialized constant BookComment[0m
+      [31m[0m
+      [31m          Object.const_get(camel_cased_word)[0m
+      [31m                ^^^^^^^^^^[0m
+      [31m  Did you mean?  BooksController[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:26:in `build_class'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:87:in `compile'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory_runner.rb:14:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/strategy_syntax_method_registrar.rb:28:in `block in define_singular_strategy_method'[0m
+      [36m# ./spec/system/04_favorite_comment_spec.rb:8:in `block (2 levels) in <main>'[0m
+
+  14) [STEP4] いいねとコメントのテスト 投稿一覧画面のテスト[課題4追加分] いいね削除機能のテスト リダイレクト先が投稿一覧画面になっている
+      [31mFailure/Error: let!(:user_book_comment) { create(:book_comment, book: book, user: user) }[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  uninitialized constant BookComment[0m
+      [31m[0m
+      [31m          Object.const_get(camel_cased_word)[0m
+      [31m                ^^^^^^^^^^[0m
+      [31m  Did you mean?  BooksController[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:26:in `build_class'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:87:in `compile'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory_runner.rb:14:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/strategy_syntax_method_registrar.rb:28:in `block in define_singular_strategy_method'[0m
+      [36m# ./spec/system/04_favorite_comment_spec.rb:8:in `block (2 levels) in <main>'[0m
+
+  15) [STEP4] いいねとコメントのテスト 投稿一覧画面のテスト[課題4追加分] いいね削除機能のテスト リダイレクト先でいいね数が正しく更新されている
+      [31mFailure/Error: let!(:user_book_comment) { create(:book_comment, book: book, user: user) }[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  uninitialized constant BookComment[0m
+      [31m[0m
+      [31m          Object.const_get(camel_cased_word)[0m
+      [31m                ^^^^^^^^^^[0m
+      [31m  Did you mean?  BooksController[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:26:in `build_class'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:87:in `compile'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory_runner.rb:14:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/strategy_syntax_method_registrar.rb:28:in `block in define_singular_strategy_method'[0m
+      [36m# ./spec/system/04_favorite_comment_spec.rb:8:in `block (2 levels) in <main>'[0m
+
+  16) [STEP4] いいねとコメントのテスト 自分の投稿詳細画面のテスト[課題4追加分] 表示の確認 いいねボタンのハートアイコンが表示される
+      [31mFailure/Error: let!(:user_book_comment) { create(:book_comment, book: book, user: user) }[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  uninitialized constant BookComment[0m
+      [31m[0m
+      [31m          Object.const_get(camel_cased_word)[0m
+      [31m                ^^^^^^^^^^[0m
+      [31m  Did you mean?  BooksController[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:26:in `build_class'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:87:in `compile'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory_runner.rb:14:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/strategy_syntax_method_registrar.rb:28:in `block in define_singular_strategy_method'[0m
+      [36m# ./spec/system/04_favorite_comment_spec.rb:8:in `block (2 levels) in <main>'[0m
+
+  17) [STEP4] いいねとコメントのテスト 自分の投稿詳細画面のテスト[課題4追加分] 表示の確認 いいねボタンが表示される
+      [31mFailure/Error: let!(:user_book_comment) { create(:book_comment, book: book, user: user) }[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  uninitialized constant BookComment[0m
+      [31m[0m
+      [31m          Object.const_get(camel_cased_word)[0m
+      [31m                ^^^^^^^^^^[0m
+      [31m  Did you mean?  BooksController[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:26:in `build_class'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:87:in `compile'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory_runner.rb:14:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/strategy_syntax_method_registrar.rb:28:in `block in define_singular_strategy_method'[0m
+      [36m# ./spec/system/04_favorite_comment_spec.rb:8:in `block (2 levels) in <main>'[0m
+
+  18) [STEP4] いいねとコメントのテスト 自分の投稿詳細画面のテスト[課題4追加分] 表示の確認 コメント数が表示される
+      [31mFailure/Error: let!(:user_book_comment) { create(:book_comment, book: book, user: user) }[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  uninitialized constant BookComment[0m
+      [31m[0m
+      [31m          Object.const_get(camel_cased_word)[0m
+      [31m                ^^^^^^^^^^[0m
+      [31m  Did you mean?  BooksController[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:26:in `build_class'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:87:in `compile'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory_runner.rb:14:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/strategy_syntax_method_registrar.rb:28:in `block in define_singular_strategy_method'[0m
+      [36m# ./spec/system/04_favorite_comment_spec.rb:8:in `block (2 levels) in <main>'[0m
+
+  19) [STEP4] いいねとコメントのテスト 自分の投稿詳細画面のテスト[課題4追加分] 表示の確認 コメント一覧でコメント投稿者の画像が表示される: fallbackの画像がサイドバーの1つ＋Book detail直下の1つ＋コメント一覧(2人)の2つの計4つ存在する
+      [31mFailure/Error: let!(:user_book_comment) { create(:book_comment, book: book, user: user) }[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  uninitialized constant BookComment[0m
+      [31m[0m
+      [31m          Object.const_get(camel_cased_word)[0m
+      [31m                ^^^^^^^^^^[0m
+      [31m  Did you mean?  BooksController[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:26:in `build_class'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:87:in `compile'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory_runner.rb:14:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/strategy_syntax_method_registrar.rb:28:in `block in define_singular_strategy_method'[0m
+      [36m# ./spec/system/04_favorite_comment_spec.rb:8:in `block (2 levels) in <main>'[0m
+
+  20) [STEP4] いいねとコメントのテスト 自分の投稿詳細画面のテスト[課題4追加分] 表示の確認 コメント一覧でコメント投稿者の名前が表示される
+      [31mFailure/Error: let!(:user_book_comment) { create(:book_comment, book: book, user: user) }[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  uninitialized constant BookComment[0m
+      [31m[0m
+      [31m          Object.const_get(camel_cased_word)[0m
+      [31m                ^^^^^^^^^^[0m
+      [31m  Did you mean?  BooksController[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:26:in `build_class'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:87:in `compile'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory_runner.rb:14:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/strategy_syntax_method_registrar.rb:28:in `block in define_singular_strategy_method'[0m
+      [36m# ./spec/system/04_favorite_comment_spec.rb:8:in `block (2 levels) in <main>'[0m
+
+  21) [STEP4] いいねとコメントのテスト 自分の投稿詳細画面のテスト[課題4追加分] 表示の確認 コメント一覧でコメントの内容が表示される
+      [31mFailure/Error: let!(:user_book_comment) { create(:book_comment, book: book, user: user) }[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  uninitialized constant BookComment[0m
+      [31m[0m
+      [31m          Object.const_get(camel_cased_word)[0m
+      [31m                ^^^^^^^^^^[0m
+      [31m  Did you mean?  BooksController[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:26:in `build_class'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:87:in `compile'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory_runner.rb:14:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/strategy_syntax_method_registrar.rb:28:in `block in define_singular_strategy_method'[0m
+      [36m# ./spec/system/04_favorite_comment_spec.rb:8:in `block (2 levels) in <main>'[0m
+
+  22) [STEP4] いいねとコメントのテスト 自分の投稿詳細画面のテスト[課題4追加分] 表示の確認 自分が投稿したコメントの削除ボタンが表示される
+      [31mFailure/Error: let!(:user_book_comment) { create(:book_comment, book: book, user: user) }[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  uninitialized constant BookComment[0m
+      [31m[0m
+      [31m          Object.const_get(camel_cased_word)[0m
+      [31m                ^^^^^^^^^^[0m
+      [31m  Did you mean?  BooksController[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:26:in `build_class'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:87:in `compile'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory_runner.rb:14:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/strategy_syntax_method_registrar.rb:28:in `block in define_singular_strategy_method'[0m
+      [36m# ./spec/system/04_favorite_comment_spec.rb:8:in `block (2 levels) in <main>'[0m
+
+  23) [STEP4] いいねとコメントのテスト 自分の投稿詳細画面のテスト[課題4追加分] 表示の確認 他人が投稿したコメントの削除ボタンは表示されない
+      [31mFailure/Error: let!(:user_book_comment) { create(:book_comment, book: book, user: user) }[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  uninitialized constant BookComment[0m
+      [31m[0m
+      [31m          Object.const_get(camel_cased_word)[0m
+      [31m                ^^^^^^^^^^[0m
+      [31m  Did you mean?  BooksController[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:26:in `build_class'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:87:in `compile'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory_runner.rb:14:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/strategy_syntax_method_registrar.rb:28:in `block in define_singular_strategy_method'[0m
+      [36m# ./spec/system/04_favorite_comment_spec.rb:8:in `block (2 levels) in <main>'[0m
+
+  24) [STEP4] いいねとコメントのテスト 自分の投稿詳細画面のテスト[課題4追加分] 表示の確認 コメント投稿フォームが表示される
+      [31mFailure/Error: let!(:user_book_comment) { create(:book_comment, book: book, user: user) }[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  uninitialized constant BookComment[0m
+      [31m[0m
+      [31m          Object.const_get(camel_cased_word)[0m
+      [31m                ^^^^^^^^^^[0m
+      [31m  Did you mean?  BooksController[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:26:in `build_class'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:87:in `compile'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory_runner.rb:14:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/strategy_syntax_method_registrar.rb:28:in `block in define_singular_strategy_method'[0m
+      [36m# ./spec/system/04_favorite_comment_spec.rb:8:in `block (2 levels) in <main>'[0m
+
+  25) [STEP4] いいねとコメントのテスト 自分の投稿詳細画面のテスト[課題4追加分] 表示の確認 送信ボタンが表示される
+      [31mFailure/Error: let!(:user_book_comment) { create(:book_comment, book: book, user: user) }[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  uninitialized constant BookComment[0m
+      [31m[0m
+      [31m          Object.const_get(camel_cased_word)[0m
+      [31m                ^^^^^^^^^^[0m
+      [31m  Did you mean?  BooksController[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:26:in `build_class'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:87:in `compile'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory_runner.rb:14:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/strategy_syntax_method_registrar.rb:28:in `block in define_singular_strategy_method'[0m
+      [36m# ./spec/system/04_favorite_comment_spec.rb:8:in `block (2 levels) in <main>'[0m
+
+  26) [STEP4] いいねとコメントのテスト 自分の投稿詳細画面のテスト[課題4追加分] いいね機能のテスト 自分のいいねが正しく保存される
+      [31mFailure/Error: let!(:user_book_comment) { create(:book_comment, book: book, user: user) }[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  uninitialized constant BookComment[0m
+      [31m[0m
+      [31m          Object.const_get(camel_cased_word)[0m
+      [31m                ^^^^^^^^^^[0m
+      [31m  Did you mean?  BooksController[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:26:in `build_class'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:87:in `compile'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory_runner.rb:14:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/strategy_syntax_method_registrar.rb:28:in `block in define_singular_strategy_method'[0m
+      [36m# ./spec/system/04_favorite_comment_spec.rb:8:in `block (2 levels) in <main>'[0m
+
+  27) [STEP4] いいねとコメントのテスト 自分の投稿詳細画面のテスト[課題4追加分] いいね機能のテスト リダイレクト先が、いいねをした投稿詳細画面になっている
+      [31mFailure/Error: let!(:user_book_comment) { create(:book_comment, book: book, user: user) }[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  uninitialized constant BookComment[0m
+      [31m[0m
+      [31m          Object.const_get(camel_cased_word)[0m
+      [31m                ^^^^^^^^^^[0m
+      [31m  Did you mean?  BooksController[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:26:in `build_class'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:87:in `compile'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory_runner.rb:14:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/strategy_syntax_method_registrar.rb:28:in `block in define_singular_strategy_method'[0m
+      [36m# ./spec/system/04_favorite_comment_spec.rb:8:in `block (2 levels) in <main>'[0m
+
+  28) [STEP4] いいねとコメントのテスト 自分の投稿詳細画面のテスト[課題4追加分] いいね機能のテスト リダイレクト先でいいね数が正しく更新されている
+      [31mFailure/Error: let!(:user_book_comment) { create(:book_comment, book: book, user: user) }[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  uninitialized constant BookComment[0m
+      [31m[0m
+      [31m          Object.const_get(camel_cased_word)[0m
+      [31m                ^^^^^^^^^^[0m
+      [31m  Did you mean?  BooksController[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:26:in `build_class'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:87:in `compile'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory_runner.rb:14:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/strategy_syntax_method_registrar.rb:28:in `block in define_singular_strategy_method'[0m
+      [36m# ./spec/system/04_favorite_comment_spec.rb:8:in `block (2 levels) in <main>'[0m
+
+  29) [STEP4] いいねとコメントのテスト 自分の投稿詳細画面のテスト[課題4追加分] コメント追加機能のテスト 自分のコメントが正しく保存される
+      [31mFailure/Error: let!(:user_book_comment) { create(:book_comment, book: book, user: user) }[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  uninitialized constant BookComment[0m
+      [31m[0m
+      [31m          Object.const_get(camel_cased_word)[0m
+      [31m                ^^^^^^^^^^[0m
+      [31m  Did you mean?  BooksController[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:26:in `build_class'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:87:in `compile'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory_runner.rb:14:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/strategy_syntax_method_registrar.rb:28:in `block in define_singular_strategy_method'[0m
+      [36m# ./spec/system/04_favorite_comment_spec.rb:8:in `block (2 levels) in <main>'[0m
+
+  30) [STEP4] いいねとコメントのテスト 自分の投稿詳細画面のテスト[課題4追加分] コメント追加機能のテスト リダイレクト先が、コメントをした投稿詳細画面になっている
+      [31mFailure/Error: let!(:user_book_comment) { create(:book_comment, book: book, user: user) }[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  uninitialized constant BookComment[0m
+      [31m[0m
+      [31m          Object.const_get(camel_cased_word)[0m
+      [31m                ^^^^^^^^^^[0m
+      [31m  Did you mean?  BooksController[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:26:in `build_class'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:87:in `compile'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory_runner.rb:14:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/strategy_syntax_method_registrar.rb:28:in `block in define_singular_strategy_method'[0m
+      [36m# ./spec/system/04_favorite_comment_spec.rb:8:in `block (2 levels) in <main>'[0m
+
+  31) [STEP4] いいねとコメントのテスト 自分の投稿詳細画面のテスト[課題4追加分] コメント追加機能のテスト リダイレクト先でコメント数が正しく更新されている
+      [31mFailure/Error: let!(:user_book_comment) { create(:book_comment, book: book, user: user) }[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  uninitialized constant BookComment[0m
+      [31m[0m
+      [31m          Object.const_get(camel_cased_word)[0m
+      [31m                ^^^^^^^^^^[0m
+      [31m  Did you mean?  BooksController[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:26:in `build_class'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:87:in `compile'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory_runner.rb:14:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/strategy_syntax_method_registrar.rb:28:in `block in define_singular_strategy_method'[0m
+      [36m# ./spec/system/04_favorite_comment_spec.rb:8:in `block (2 levels) in <main>'[0m
+
+  32) [STEP4] いいねとコメントのテスト 自分の投稿詳細画面のテスト[課題4追加分] コメント追加機能のテスト リダイレクト先で新しいコメントが表示されている
+      [31mFailure/Error: let!(:user_book_comment) { create(:book_comment, book: book, user: user) }[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  uninitialized constant BookComment[0m
+      [31m[0m
+      [31m          Object.const_get(camel_cased_word)[0m
+      [31m                ^^^^^^^^^^[0m
+      [31m  Did you mean?  BooksController[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:26:in `build_class'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:87:in `compile'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory_runner.rb:14:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/strategy_syntax_method_registrar.rb:28:in `block in define_singular_strategy_method'[0m
+      [36m# ./spec/system/04_favorite_comment_spec.rb:8:in `block (2 levels) in <main>'[0m
+
+  33) [STEP4] いいねとコメントのテスト 自分の投稿詳細画面のテスト[課題4追加分] コメント削除機能のテスト 自分のコメントが正しく削除される
+      [31mFailure/Error: let!(:user_book_comment) { create(:book_comment, book: book, user: user) }[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  uninitialized constant BookComment[0m
+      [31m[0m
+      [31m          Object.const_get(camel_cased_word)[0m
+      [31m                ^^^^^^^^^^[0m
+      [31m  Did you mean?  BooksController[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:26:in `build_class'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:87:in `compile'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory_runner.rb:14:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/strategy_syntax_method_registrar.rb:28:in `block in define_singular_strategy_method'[0m
+      [36m# ./spec/system/04_favorite_comment_spec.rb:8:in `block (2 levels) in <main>'[0m
+
+  34) [STEP4] いいねとコメントのテスト 自分の投稿詳細画面のテスト[課題4追加分] コメント削除機能のテスト リダイレクト先が、コメントをしていた投稿詳細画面になっている
+      [31mFailure/Error: let!(:user_book_comment) { create(:book_comment, book: book, user: user) }[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  uninitialized constant BookComment[0m
+      [31m[0m
+      [31m          Object.const_get(camel_cased_word)[0m
+      [31m                ^^^^^^^^^^[0m
+      [31m  Did you mean?  BooksController[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:26:in `build_class'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:87:in `compile'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory_runner.rb:14:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/strategy_syntax_method_registrar.rb:28:in `block in define_singular_strategy_method'[0m
+      [36m# ./spec/system/04_favorite_comment_spec.rb:8:in `block (2 levels) in <main>'[0m
+
+  35) [STEP4] いいねとコメントのテスト 自分の投稿詳細画面のテスト[課題4追加分] コメント削除機能のテスト リダイレクト先でコメント数が正しく更新されている
+      [31mFailure/Error: let!(:user_book_comment) { create(:book_comment, book: book, user: user) }[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  uninitialized constant BookComment[0m
+      [31m[0m
+      [31m          Object.const_get(camel_cased_word)[0m
+      [31m                ^^^^^^^^^^[0m
+      [31m  Did you mean?  BooksController[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:26:in `build_class'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:87:in `compile'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory_runner.rb:14:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/strategy_syntax_method_registrar.rb:28:in `block in define_singular_strategy_method'[0m
+      [36m# ./spec/system/04_favorite_comment_spec.rb:8:in `block (2 levels) in <main>'[0m
+
+  36) [STEP4] いいねとコメントのテスト 自分の投稿詳細画面のテスト[課題4追加分] コメント削除機能のテスト リダイレクト先で削除したコメントは表示されない
+      [31mFailure/Error: let!(:user_book_comment) { create(:book_comment, book: book, user: user) }[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  uninitialized constant BookComment[0m
+      [31m[0m
+      [31m          Object.const_get(camel_cased_word)[0m
+      [31m                ^^^^^^^^^^[0m
+      [31m  Did you mean?  BooksController[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:26:in `build_class'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:87:in `compile'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory_runner.rb:14:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/strategy_syntax_method_registrar.rb:28:in `block in define_singular_strategy_method'[0m
+      [36m# ./spec/system/04_favorite_comment_spec.rb:8:in `block (2 levels) in <main>'[0m
+
+  37) [STEP4] いいねとコメントのテスト 自分のユーザ詳細画面のテスト[課題4追加分] 表示の確認 いいねボタンのハートアイコンが表示される
+      [31mFailure/Error: let!(:user_book_comment) { create(:book_comment, book: book, user: user) }[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  uninitialized constant BookComment[0m
+      [31m[0m
+      [31m          Object.const_get(camel_cased_word)[0m
+      [31m                ^^^^^^^^^^[0m
+      [31m  Did you mean?  BooksController[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:26:in `build_class'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:87:in `compile'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory_runner.rb:14:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/strategy_syntax_method_registrar.rb:28:in `block in define_singular_strategy_method'[0m
+      [36m# ./spec/system/04_favorite_comment_spec.rb:8:in `block (2 levels) in <main>'[0m
+
+  38) [STEP4] いいねとコメントのテスト 自分のユーザ詳細画面のテスト[課題4追加分] 表示の確認 いいねボタンが表示される
+      [31mFailure/Error: let!(:user_book_comment) { create(:book_comment, book: book, user: user) }[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  uninitialized constant BookComment[0m
+      [31m[0m
+      [31m          Object.const_get(camel_cased_word)[0m
+      [31m                ^^^^^^^^^^[0m
+      [31m  Did you mean?  BooksController[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:26:in `build_class'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:87:in `compile'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory_runner.rb:14:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/strategy_syntax_method_registrar.rb:28:in `block in define_singular_strategy_method'[0m
+      [36m# ./spec/system/04_favorite_comment_spec.rb:8:in `block (2 levels) in <main>'[0m
+
+  39) [STEP4] いいねとコメントのテスト 自分のユーザ詳細画面のテスト[課題4追加分] 表示の確認 コメント数が表示される
+      [31mFailure/Error: let!(:user_book_comment) { create(:book_comment, book: book, user: user) }[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  uninitialized constant BookComment[0m
+      [31m[0m
+      [31m          Object.const_get(camel_cased_word)[0m
+      [31m                ^^^^^^^^^^[0m
+      [31m  Did you mean?  BooksController[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:26:in `build_class'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:87:in `compile'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory_runner.rb:14:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/strategy_syntax_method_registrar.rb:28:in `block in define_singular_strategy_method'[0m
+      [36m# ./spec/system/04_favorite_comment_spec.rb:8:in `block (2 levels) in <main>'[0m
+
+  40) [STEP4] いいねとコメントのテスト 自分のユーザ詳細画面のテスト[課題4追加分] いいね作成機能のテスト 自分のいいねが正しく保存される
+      [31mFailure/Error: let!(:user_book_comment) { create(:book_comment, book: book, user: user) }[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  uninitialized constant BookComment[0m
+      [31m[0m
+      [31m          Object.const_get(camel_cased_word)[0m
+      [31m                ^^^^^^^^^^[0m
+      [31m  Did you mean?  BooksController[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:26:in `build_class'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:87:in `compile'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory_runner.rb:14:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/strategy_syntax_method_registrar.rb:28:in `block in define_singular_strategy_method'[0m
+      [36m# ./spec/system/04_favorite_comment_spec.rb:8:in `block (2 levels) in <main>'[0m
+
+  41) [STEP4] いいねとコメントのテスト 自分のユーザ詳細画面のテスト[課題4追加分] いいね作成機能のテスト リダイレクト先が自分のユーザ詳細画面になっている
+      [31mFailure/Error: let!(:user_book_comment) { create(:book_comment, book: book, user: user) }[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  uninitialized constant BookComment[0m
+      [31m[0m
+      [31m          Object.const_get(camel_cased_word)[0m
+      [31m                ^^^^^^^^^^[0m
+      [31m  Did you mean?  BooksController[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:26:in `build_class'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:87:in `compile'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory_runner.rb:14:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/strategy_syntax_method_registrar.rb:28:in `block in define_singular_strategy_method'[0m
+      [36m# ./spec/system/04_favorite_comment_spec.rb:8:in `block (2 levels) in <main>'[0m
+
+  42) [STEP4] いいねとコメントのテスト 自分のユーザ詳細画面のテスト[課題4追加分] いいね作成機能のテスト リダイレクト先でいいね数が正しく更新されている
+      [31mFailure/Error: let!(:user_book_comment) { create(:book_comment, book: book, user: user) }[0m
+      [31m[0m
+      [31mNameError:[0m
+      [31m  uninitialized constant BookComment[0m
+      [31m[0m
+      [31m          Object.const_get(camel_cased_word)[0m
+      [31m                ^^^^^^^^^^[0m
+      [31m  Did you mean?  BooksController[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:26:in `build_class'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory.rb:87:in `compile'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/factory_runner.rb:14:in `run'[0m
+      [36m# /home/ec2-user/.rvm/gems/ruby-3.1.2/gems/factory_bot-6.2.1/lib/factory_bot/strategy_syntax_method_registrar.rb:28:in `block in define_singular_strategy_method'[0m
+      [36m# ./spec/system/04_favorite_comment_spec.rb:8:in `block (2 levels) in <main>'[0m
+
+Finished in 56.05 seconds (files took 2.94 seconds to load)
+[31m239 examples, 42 failures[0m
 
 Failed examples:
 
-[31mrspec ./spec/system/02_after_login_spec.rb:50[0m [36m# [STEP2] ユーザログイン後のテスト 投稿一覧画面のテスト 表示内容の確認 自分と他人の画像のリンク先が正しい[0m
-[31mrspec ./spec/system/02_after_login_spec.rb:120[0m [36m# [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト 表示内容の確認 ユーザ画像・名前のリンク先が正しい[0m
-[31mrspec ./spec/system/03_finishing_touches_spec.rb:225[0m [36m# [STEP3] 仕上げのテスト 他人の画面のテスト 他人の投稿詳細画面のテスト 表示内容の確認 ユーザ画像・名前のリンク先が正しい[0m
-[31mrspec ./spec/system/03_finishing_touches_spec.rb:261[0m [36m# [STEP3] 仕上げのテスト 他人の画面のテスト 他人の投稿編集画面 遷移できず、投稿一覧画面にリダイレクトされる[0m
+[31mrspec ./spec/models/book_comment_spec.rb:12[0m [36m# BookCommentモデルのテスト バリデーションのテスト commentカラム 空欄でないこと[0m
+[31mrspec ./spec/models/book_comment_spec.rb:21[0m [36m# BookCommentモデルのテスト アソシエーションのテスト Bookモデルとの関係 N:1となっている[0m
+[31mrspec ./spec/models/book_comment_spec.rb:26[0m [36m# BookCommentモデルのテスト アソシエーションのテスト Userモデルとの関係 N:1となっている[0m
+[31mrspec ./spec/models/favorite_spec.rb:12[0m [36m# Favoriteモデルのテスト バリデーションのテスト ユーザーは一つの投稿に一つしかいいねできない[0m
+[31mrspec ./spec/models/favorite_spec.rb:19[0m [36m# Favoriteモデルのテスト アソシエーションのテスト Bookモデルとの関係 N:1となっている[0m
+[31mrspec ./spec/models/favorite_spec.rb:24[0m [36m# Favoriteモデルのテスト アソシエーションのテスト Userモデルとの関係 N:1となっている[0m
+[31mrspec ./spec/system/04_favorite_comment_spec.rb:24[0m [36m# [STEP4] いいねとコメントのテスト 投稿一覧画面のテスト[課題4追加分] 表示の確認 いいねボタンのハートアイコンが表示される[0m
+[31mrspec ./spec/system/04_favorite_comment_spec.rb:27[0m [36m# [STEP4] いいねとコメントのテスト 投稿一覧画面のテスト[課題4追加分] 表示の確認 いいねボタンが表示される[0m
+[31mrspec ./spec/system/04_favorite_comment_spec.rb:31[0m [36m# [STEP4] いいねとコメントのテスト 投稿一覧画面のテスト[課題4追加分] 表示の確認 コメント数が表示される[0m
+[31mrspec ./spec/system/04_favorite_comment_spec.rb:37[0m [36m# [STEP4] いいねとコメントのテスト 投稿一覧画面のテスト[課題4追加分] いいね作成機能のテスト 自分のいいねが正しく保存される[0m
+[31mrspec ./spec/system/04_favorite_comment_spec.rb:40[0m [36m# [STEP4] いいねとコメントのテスト 投稿一覧画面のテスト[課題4追加分] いいね作成機能のテスト リダイレクト先が投稿一覧画面になっている[0m
+[31mrspec ./spec/system/04_favorite_comment_spec.rb:44[0m [36m# [STEP4] いいねとコメントのテスト 投稿一覧画面のテスト[課題4追加分] いいね作成機能のテスト リダイレクト先でいいね数が正しく更新されている[0m
+[31mrspec ./spec/system/04_favorite_comment_spec.rb:50[0m [36m# [STEP4] いいねとコメントのテスト 投稿一覧画面のテスト[課題4追加分] いいね削除機能のテスト 自分のいいねが正しく削除される[0m
+[31mrspec ./spec/system/04_favorite_comment_spec.rb:53[0m [36m# [STEP4] いいねとコメントのテスト 投稿一覧画面のテスト[課題4追加分] いいね削除機能のテスト リダイレクト先が投稿一覧画面になっている[0m
+[31mrspec ./spec/system/04_favorite_comment_spec.rb:57[0m [36m# [STEP4] いいねとコメントのテスト 投稿一覧画面のテスト[課題4追加分] いいね削除機能のテスト リダイレクト先でいいね数が正しく更新されている[0m
+[31mrspec ./spec/system/04_favorite_comment_spec.rb:69[0m [36m# [STEP4] いいねとコメントのテスト 自分の投稿詳細画面のテスト[課題4追加分] 表示の確認 いいねボタンのハートアイコンが表示される[0m
+[31mrspec ./spec/system/04_favorite_comment_spec.rb:72[0m [36m# [STEP4] いいねとコメントのテスト 自分の投稿詳細画面のテスト[課題4追加分] 表示の確認 いいねボタンが表示される[0m
+[31mrspec ./spec/system/04_favorite_comment_spec.rb:75[0m [36m# [STEP4] いいねとコメントのテスト 自分の投稿詳細画面のテスト[課題4追加分] 表示の確認 コメント数が表示される[0m
+[31mrspec ./spec/system/04_favorite_comment_spec.rb:78[0m [36m# [STEP4] いいねとコメントのテスト 自分の投稿詳細画面のテスト[課題4追加分] 表示の確認 コメント一覧でコメント投稿者の画像が表示される: fallbackの画像がサイドバーの1つ＋Book detail直下の1つ＋コメント一覧(2人)の2つの計4つ存在する[0m
+[31mrspec ./spec/system/04_favorite_comment_spec.rb:81[0m [36m# [STEP4] いいねとコメントのテスト 自分の投稿詳細画面のテスト[課題4追加分] 表示の確認 コメント一覧でコメント投稿者の名前が表示される[0m
+[31mrspec ./spec/system/04_favorite_comment_spec.rb:85[0m [36m# [STEP4] いいねとコメントのテスト 自分の投稿詳細画面のテスト[課題4追加分] 表示の確認 コメント一覧でコメントの内容が表示される[0m
+[31mrspec ./spec/system/04_favorite_comment_spec.rb:89[0m [36m# [STEP4] いいねとコメントのテスト 自分の投稿詳細画面のテスト[課題4追加分] 表示の確認 自分が投稿したコメントの削除ボタンが表示される[0m
+[31mrspec ./spec/system/04_favorite_comment_spec.rb:92[0m [36m# [STEP4] いいねとコメントのテスト 自分の投稿詳細画面のテスト[課題4追加分] 表示の確認 他人が投稿したコメントの削除ボタンは表示されない[0m
+[31mrspec ./spec/system/04_favorite_comment_spec.rb:95[0m [36m# [STEP4] いいねとコメントのテスト 自分の投稿詳細画面のテスト[課題4追加分] 表示の確認 コメント投稿フォームが表示される[0m
+[31mrspec ./spec/system/04_favorite_comment_spec.rb:98[0m [36m# [STEP4] いいねとコメントのテスト 自分の投稿詳細画面のテスト[課題4追加分] 表示の確認 送信ボタンが表示される[0m
+[31mrspec ./spec/system/04_favorite_comment_spec.rb:103[0m [36m# [STEP4] いいねとコメントのテスト 自分の投稿詳細画面のテスト[課題4追加分] いいね機能のテスト 自分のいいねが正しく保存される[0m
+[31mrspec ./spec/system/04_favorite_comment_spec.rb:106[0m [36m# [STEP4] いいねとコメントのテスト 自分の投稿詳細画面のテスト[課題4追加分] いいね機能のテスト リダイレクト先が、いいねをした投稿詳細画面になっている[0m
+[31mrspec ./spec/system/04_favorite_comment_spec.rb:110[0m [36m# [STEP4] いいねとコメントのテスト 自分の投稿詳細画面のテスト[課題4追加分] いいね機能のテスト リダイレクト先でいいね数が正しく更新されている[0m
+[31mrspec ./spec/system/04_favorite_comment_spec.rb:120[0m [36m# [STEP4] いいねとコメントのテスト 自分の投稿詳細画面のテスト[課題4追加分] コメント追加機能のテスト 自分のコメントが正しく保存される[0m
+[31mrspec ./spec/system/04_favorite_comment_spec.rb:123[0m [36m# [STEP4] いいねとコメントのテスト 自分の投稿詳細画面のテスト[課題4追加分] コメント追加機能のテスト リダイレクト先が、コメントをした投稿詳細画面になっている[0m
+[31mrspec ./spec/system/04_favorite_comment_spec.rb:127[0m [36m# [STEP4] いいねとコメントのテスト 自分の投稿詳細画面のテスト[課題4追加分] コメント追加機能のテスト リダイレクト先でコメント数が正しく更新されている[0m
+[31mrspec ./spec/system/04_favorite_comment_spec.rb:131[0m [36m# [STEP4] いいねとコメントのテスト 自分の投稿詳細画面のテスト[課題4追加分] コメント追加機能のテスト リダイレクト先で新しいコメントが表示されている[0m
+[31mrspec ./spec/system/04_favorite_comment_spec.rb:142[0m [36m# [STEP4] いいねとコメントのテスト 自分の投稿詳細画面のテスト[課題4追加分] コメント削除機能のテスト 自分のコメントが正しく削除される[0m
+[31mrspec ./spec/system/04_favorite_comment_spec.rb:145[0m [36m# [STEP4] いいねとコメントのテスト 自分の投稿詳細画面のテスト[課題4追加分] コメント削除機能のテスト リダイレクト先が、コメントをしていた投稿詳細画面になっている[0m
+[31mrspec ./spec/system/04_favorite_comment_spec.rb:149[0m [36m# [STEP4] いいねとコメントのテスト 自分の投稿詳細画面のテスト[課題4追加分] コメント削除機能のテスト リダイレクト先でコメント数が正しく更新されている[0m
+[31mrspec ./spec/system/04_favorite_comment_spec.rb:153[0m [36m# [STEP4] いいねとコメントのテスト 自分の投稿詳細画面のテスト[課題4追加分] コメント削除機能のテスト リダイレクト先で削除したコメントは表示されない[0m
+[31mrspec ./spec/system/04_favorite_comment_spec.rb:165[0m [36m# [STEP4] いいねとコメントのテスト 自分のユーザ詳細画面のテスト[課題4追加分] 表示の確認 いいねボタンのハートアイコンが表示される[0m
+[31mrspec ./spec/system/04_favorite_comment_spec.rb:168[0m [36m# [STEP4] いいねとコメントのテスト 自分のユーザ詳細画面のテスト[課題4追加分] 表示の確認 いいねボタンが表示される[0m
+[31mrspec ./spec/system/04_favorite_comment_spec.rb:171[0m [36m# [STEP4] いいねとコメントのテスト 自分のユーザ詳細画面のテスト[課題4追加分] 表示の確認 コメント数が表示される[0m
+[31mrspec ./spec/system/04_favorite_comment_spec.rb:176[0m [36m# [STEP4] いいねとコメントのテスト 自分のユーザ詳細画面のテスト[課題4追加分] いいね作成機能のテスト 自分のいいねが正しく保存される[0m
+[31mrspec ./spec/system/04_favorite_comment_spec.rb:179[0m [36m# [STEP4] いいねとコメントのテスト 自分のユーザ詳細画面のテスト[課題4追加分] いいね作成機能のテスト リダイレクト先が自分のユーザ詳細画面になっている[0m
+[31mrspec ./spec/system/04_favorite_comment_spec.rb:183[0m [36m# [STEP4] いいねとコメントのテスト 自分のユーザ詳細画面のテスト[課題4追加分] いいね作成機能のテスト リダイレクト先でいいね数が正しく更新されている[0m
 
