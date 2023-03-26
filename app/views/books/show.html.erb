@@ -13,7 +13,7 @@
         <tbody>
           <td>
             <%= link_to user_path(@book.user.id) do %>
-              <%= image_tag @book.user.get_profile_image("80x80") %>
+              <%= image_tag @book.user.get_profile_image("80x80") %></br>
               <%= @book.user.name %>
             <% end %>
           </td>
@@ -23,8 +23,32 @@
             <td><%= link_to "Edit", edit_book_path %></td>
             <td><%= link_to "Destroy", book_path, method: :delete, "data-confirm" => "本当に消しますか？" %></td>
           <% end %>
+          <td></td>
+          <td>コメント数：<%= @book.post_comments.count %></td>
         </tbody>
       </table>
+      <div>以下、コメントエリア</div>
+      <table>
+      <% @post_comments.each do |comment| %>
+        <tbody>
+          <td>
+          <%= link_to user_path(comment.user.id) do %>
+            <%= image_tag comment.user.get_profile_image("80x80") %></br>
+            <%= comment.user.name %>
+          <% end %>
+          </td>
+          <td>
+            <%= comment.comment %>
+          </td>
+        </tbody>
+      <% end %>
+      </table>
+      <%= form_with model: [@book, @post_comment] do |f| %>
+        <div class="form-group">
+          <%= f.text_area :comment, rows: '5' %>
+          <%= f.submit "送信" %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
