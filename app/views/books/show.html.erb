@@ -1,10 +1,10 @@
 <!--/books/:idの画面-->
-<div class="row"><%= render "layouts/errors", obj: @book %></div>
+<div class="row"><%= render "layouts/errors", obj: @post_comment %></div>
 <div class="container">
   <div class="row">
     <div class="col-md-3">
       <%= render "users/info", user: @user, book: @book %>
-      <%= render "newbook", book: Book.new %>
+      <%= render "books/newbook", book: Book.new %>
     </div>
 
     <div class="col-md-8 offset-md-1">
@@ -20,8 +20,8 @@
           <td><%= link_to @book.title, @book_path %></td>
           <td><%= @book.body %></td>
           <% if @book.user == current_user %>
-            <td><%= link_to "Edit", edit_book_path %></td>
-            <td><%= link_to "Destroy", book_path, method: :delete, "data-confirm" => "本当に消しますか？" %></td>
+            <td><%= link_to "Edit", edit_book_path(@book.id) %></td>
+            <td><%= link_to "Destroy", book_path(@book.id), method: :delete, "data-confirm" => "本当に消しますか？" %></td>
           <% end %>
           <td></td>
           <td>コメント数：<%= @book.post_comments.count %></td>
@@ -41,7 +41,7 @@
           </td>
           <td>
           <% if current_user == comment.user %>
-            <%= link_to "Destroy", book_post_comment_path(comment.book, comment), method: :delete %>
+            <%= link_to "Destroy", book_post_comment_path(comment.book, comment), method: :delete, "data-confirm" => "本当に消しますか？" %>
           <% end %>
           </td>
         </tbody>

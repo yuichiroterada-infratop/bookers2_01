@@ -2,13 +2,14 @@ class PostCommentsController < ApplicationController
   def create
     book = Book.find(params[:book_id])
     comment = current_user.post_comments.new(post_comment_params)
-    comment.book_id = book.id
+    comment.book = book
     if comment.save
-      redirect_to book_path(book.id)
+      redirect_to book_path(book.id), notice: "You have posted comment successfully"
     else
-      @books = Book.all
+      @book = Book.find(params[:book_id])
       @user = current_user
       @post_comments = PostComment.all
+      @post_comment = comment
       render "books/show"
     end
   end
